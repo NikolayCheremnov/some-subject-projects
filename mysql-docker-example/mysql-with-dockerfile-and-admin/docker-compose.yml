@@ -1,0 +1,22 @@
+services:
+  # сервис БД
+  mysql:
+    container_name: local_mysql
+    # указываем, что необходимо собрать образ из контекста текущей папки ('context: .')
+    build:
+      context: .
+    restart: always
+    ports:
+      - "3306:3306"
+
+  # сервис админки для работы с БД (веб-клиент, поднятый в докере)
+  phpmyadmin:
+    container_name: local_phpmyadmin
+    depends_on:
+      - mysql
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql

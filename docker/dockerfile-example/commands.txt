@@ -1,0 +1,19 @@
+1. Собрать образ контейнера согласно Dockerfile:
+
+docker build -t local_postgres .
+
+2. Запустить контейнера на основе собранного образа
+
+docker run --name local_postgres_instance -p 5432:5432 -d local_postgres
+
+3. Остановка контейнера
+
+docker stop local_postgres_instance
+
+4. Повторный запуск
+
+docker start local_postgres_instance
+
+5. Удалить контейнер (volume (том) и image(образ)) остануться
+
+docker rm local_postgres_instance

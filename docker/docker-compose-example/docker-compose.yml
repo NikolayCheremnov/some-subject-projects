@@ -1,0 +1,11 @@
+
+# сервисы, разворачиваемые в контейнерах (контенеры)
+services:
+  postgres:
+    image: postgres:latest
+    container_name: my_postgres_instance
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

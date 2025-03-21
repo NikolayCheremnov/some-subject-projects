@@ -1,0 +1,19 @@
+1. Запуск контейнера:
+
+docker run --name local_postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+
+2. Проверка статуса (+ заглянуть в Docker Desktop):
+
+docker ps
+
+3. Остановка контейнера
+
+docker stop local_postgres
+
+4. Повторный запуск
+
+docker start local_postgres
+
+5. Удалить контейнер (volume (том) и image(образ)) остануться
+
+docker rm local_postgres

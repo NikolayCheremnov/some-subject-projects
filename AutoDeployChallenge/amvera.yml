@@ -1,0 +1,4 @@
+build:
+  dockerfile: AutoDeployChallenge/Dockerfile
+run:
+  containerPort: 8080

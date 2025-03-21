@@ -1,0 +1,19 @@
+1. Запуск контейнеров:
+
+docker-compose up -d
+
+2. Проверить, что контейнеры запустились:
+
+docker ps
+
+3. Остановить контейнеры:
+
+docker-compose stop
+
+4. Запустить с пересборкой
+
+docker-compose up -d --build
+
+5. Остановить и удалить контейнеры
+
+docker-compose down

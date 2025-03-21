@@ -1,0 +1,20 @@
+services:
+  # приложение
+  app:
+    build:
+      context: .
+      dockerfile: ./DockerizedAppExampleWithDb/Dockerfile
+    container_name: app
+    ports:
+      - "8080:8080"
+
+  # контейнер БД
+  db:
+    image: postgres:latest
+    container_name: app_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=customers
+    ports:
+      - "5432:5432"
